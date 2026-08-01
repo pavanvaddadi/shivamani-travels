@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Shivamani Travels</string>
+    <string name="title_activity_main">Shivamani Travels</string>
+    <string name="package_name">com.shivamani.travels</string>
+    <string name="custom_url_scheme">com.shivamani.travels</string>
+</resources>

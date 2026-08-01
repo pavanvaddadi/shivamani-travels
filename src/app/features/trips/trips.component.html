@@ -1,0 +1,26 @@
+<app-header pageTitle="Popular Destinations" backHref="/home"></app-header>
+
+<ion-content class="bg-light">
+  <div class="trips-container">
+    <div class="header-text">
+      <h2>Find Your Next Adventure</h2>
+      <p>Explore our curated list of destinations</p>
+    </div>
+    
+    <div class="grid-container" *ngIf="trips$ | async as trips; else loading">
+      <app-trip-card *ngFor="let trip of trips"
+        [image]="trip.image"
+        [title]="trip.title"
+        [subtitle]="trip.subtitle"
+        [price]="trip.price"
+        [description]="trip.description">
+      </app-trip-card>
+    </div>
+
+    <ng-template #loading>
+      <div class="loading-spinner">
+        <ion-spinner name="crescent" color="primary"></ion-spinner>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>

@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "image": "assets/images/swift.jpg",
+    "name": "Maruti Swift Dzire",
+    "type": "Sedan",
+    "seats": 4,
+    "hasAc": true,
+    "price": "₹11/km",
+    "description": "Comfortable and budget-friendly sedan, ideal for small families.",
+    "suitableFor": "Local & Airport Drop"
+  },
+  {
+    "id": 2,
+    "image": "assets/images/etios.jpg",
+    "name": "Toyota Etios",
+    "type": "Sedan",
+    "seats": 4,
+    "hasAc": true,
+    "price": "₹12/km",
+    "description": "Spacious sedan with excellent boot space for luggage.",
+    "suitableFor": "Outstation & Airport"
+  },
+  {
+    "id": 3,
+    "image": "assets/images/ertiga.jpg",
+    "name": "Maruti Ertiga",
+    "type": "MUV",
+    "seats": 6,
+    "hasAc": true,
+    "price": "₹14/km",
+    "description": "Compact MUV offering great comfort for mid-sized groups.",
+    "suitableFor": "Family Trips"
+  },
+  {
+    "id": 4,
+    "image": "assets/images/innova.jpg",
+    "name": "Toyota Innova",
+    "type": "SUV",
+    "seats": 7,
+    "hasAc": true,
+    "price": "₹16/km",
+    "description": "The trusted choice for long journeys with unparalleled comfort.",
+    "suitableFor": "Long Tours"
+  },
+  {
+    "id": 5,
+    "image": "assets/images/innova.jpg",
+    "name": "Innova Crysta",
+    "type": "Premium SUV",
+    "seats": 7,
+    "hasAc": true,
+    "price": "₹18/km",
+    "description": "Premium luxury SUV for the ultimate travel experience.",
+    "suitableFor": "VIP & Luxury Travel"
+  },
+  {
+    "id": 6,
+    "image": "assets/images/carens.jpg",
+    "name": "Kia Carens",
+    "type": "Premium MUV",
+    "seats": 6,
+    "hasAc": true,
+    "price": "₹16/km",
+    "description": "Modern and feature-packed MUV for a comfortable ride.",
+    "suitableFor": "Outstation Trips"
+  },
+  {
+    "id": 7,
+    "image": "assets/images/tempo.jpg",
+    "name": "Tempo Traveller",
+    "type": "Van",
+    "seats": 12,
+    "hasAc": true,
+    "price": "₹24/km",
+    "description": "Spacious van designed for large groups and excursions.",
+    "suitableFor": "Group Tours"
+  }
+]

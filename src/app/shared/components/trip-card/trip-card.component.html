@@ -1,0 +1,14 @@
+<ion-card class="premium-card">
+  <img [src]="image" (error)="image = 'assets/images/placeholder.jpg'" [alt]="title" class="card-image" loading="lazy"/>
+  <ion-card-header>
+    <ion-card-subtitle>{{ subtitle }}</ion-card-subtitle>
+    <ion-card-title>{{ title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="card-footer">
+    <p *ngIf="description" class="trip-description">{{ description }}</p>
+    <div class="footer-actions">
+      <span class="price" *ngIf="price">{{ price }}</span>
+      <ion-button fill="clear" color="primary" class="explore-btn" routerLink="/booking" [queryParams]="{ item: title }">Book Now <ion-icon name="arrow-forward-outline" slot="end"></ion-icon></ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

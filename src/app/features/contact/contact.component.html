@@ -1,0 +1,59 @@
+<app-header pageTitle="Contact Us" backHref="/home"></app-header>
+
+<ion-content class="bg-light">
+  <div class="contact-container">
+    <div class="header-text">
+      <h2>Get In Touch</h2>
+      <p>We're here to help you plan your perfect trip.</p>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="info-grid">
+      <div class="info-card">
+        <ion-icon name="call" color="primary"></ion-icon>
+        <h3>Phone</h3>
+        <p>+91 {{ primaryContact }}</p>
+        <p>+91 {{ secondaryContact }}</p>
+      </div>
+      <div class="info-card">
+        <ion-icon name="mail" color="primary"></ion-icon>
+        <h3>Email</h3>
+        <p>booking&#64;shivamanitravels.com</p>
+      </div>
+      <div class="info-card">
+        <ion-icon name="location" color="primary"></ion-icon>
+        <h3>Office</h3>
+        <p>Beach Road, Visakhapatnam, AP</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-card mt-4">
+      <h3 class="section-heading">Send us a Message</h3>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
+        <ion-item lines="full" class="premium-input">
+          <ion-icon name="person-outline" slot="start" color="medium"></ion-icon>
+          <ion-input formControlName="name" label="Your Name" labelPlacement="floating" placeholder="Enter your name"></ion-input>
+        </ion-item>
+        <div class="error-msg" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">Name is required</div>
+
+        <ion-item lines="full" class="premium-input">
+          <ion-icon name="mail-outline" slot="start" color="medium"></ion-icon>
+          <ion-input formControlName="email" type="email" label="Your Email" labelPlacement="floating" placeholder="Enter your email"></ion-input>
+        </ion-item>
+        <div class="error-msg" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">Valid email is required</div>
+
+        <ion-item lines="full" class="premium-input">
+          <ion-textarea formControlName="message" label="Your Message" labelPlacement="floating" placeholder="How can we help you?" [autoGrow]="true" rows="4"></ion-textarea>
+        </ion-item>
+        <div class="error-msg" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">Message is required</div>
+
+        <ion-button type="submit" expand="block" shape="round" color="primary" class="send-btn mt-4">
+          <ion-icon name="paper-plane-outline" slot="start"></ion-icon>
+          Send Message
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

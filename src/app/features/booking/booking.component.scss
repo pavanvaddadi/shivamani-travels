@@ -1,0 +1,114 @@
+.premium-header {
+  --background: transparent;
+  
+  ion-toolbar {
+    --background: #ffffff;
+    --border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  ion-title {
+    font-weight: 700;
+  }
+}
+
+.bg-light {
+  --background: var(--ion-color-step-50, #f8f9fa);
+}
+
+.booking-container {
+  padding: 16px 8px;
+}
+
+.header-text {
+  padding: 10px 16px 20px;
+  text-align: center;
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: var(--ion-color-dark);
+  }
+  
+  p {
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+}
+
+.form-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ion-color-step-150, #eaeaea);
+}
+
+.mt-4 { margin-top: 24px; }
+
+.premium-input {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 8px;
+  
+  ion-icon {
+    margin-right: 12px;
+  }
+}
+
+.select-input {
+  margin-top: 12px;
+}
+
+.datetime-container {
+  background: var(--ion-color-step-50, #f8f9fa);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 4px;
+}
+
+.datetime-item {
+  --background: transparent;
+  
+  ion-label {
+    color: var(--ion-color-medium);
+    font-size: 0.9rem;
+  }
+  
+  ion-datetime-button {
+    margin-top: 8px;
+  }
+}
+
+.error-msg {
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  padding-left: 36px;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+.submit-btn-container {
+  padding: 0 8px 32px;
+}
+
+.book-btn {
+  height: 54px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  --box-shadow: 0 8px 20px rgba(var(--ion-color-primary-rgb), 0.4);
+}

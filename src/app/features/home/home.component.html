@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Discover the Beauty of <br/><span class="highlight">Andhra Pradesh</span></h1>
+      <p class="hero-subtitle">Premium travel experiences with Shivamani Travels</p>
+    </div>
+  </div>
+
+  <!-- Search Card -->
+  <app-search-card></app-search-card>
+
+  <!-- Popular Destinations -->
+  <div class="section-container mt-4">
+    <div class="section-header">
+      <h2 class="section-title">Popular Destinations</h2>
+      <ion-button fill="clear" color="primary" routerLink="/trips">See All</ion-button>
+    </div>
+    <div class="horizontal-scroll">
+      <app-trip-card *ngFor="let dest of popularDestinations"
+        [image]="dest.image"
+        [title]="dest.title"
+        [subtitle]="dest.subtitle"
+        [price]="dest.price">
+      </app-trip-card>
+    </div>
+  </div>
+
+  <!-- Featured Cars -->
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Cars</h2>
+      <ion-button fill="clear" color="primary" routerLink="/cars">See All</ion-button>
+    </div>
+    <div class="horizontal-scroll">
+      <app-car-card *ngFor="let car of featuredCars"
+        [image]="car.image"
+        [name]="car.name"
+        [type]="car.type"
+        [seats]="car.seats"
+        [hasAc]="car.hasAc"
+        [price]="car.price"
+        [description]="car.description"
+        [suitableFor]="car.suitableFor">
+      </app-car-card>
+    </div>
+  </div>
+
+  <!-- Tour Packages -->
+  <div class="section-container mb-4">
+    <div class="section-header">
+      <h2 class="section-title">Exclusive Packages</h2>
+      <ion-button fill="clear" color="primary" routerLink="/trips">See All</ion-button>
+    </div>
+    <div class="grid-container">
+      <app-trip-card *ngFor="let pkg of tourPackages"
+        [image]="pkg.image"
+        [title]="pkg.title"
+        [subtitle]="pkg.subtitle"
+        [price]="pkg.price"
+        [description]="pkg.description">
+      </app-trip-card>
+    </div>
+  </div>
+
+  <!-- Wedding Services -->
+  <div class="section-container mb-4">
+    <div class="section-header">
+      <h2 class="section-title">Wedding & Event Decorations</h2>
+    </div>
+    <div class="grid-container" *ngIf="weddingServices$ | async as services">
+      <app-trip-card *ngFor="let srv of services"
+        [image]="srv.image"
+        [title]="srv.title"
+        [subtitle]="srv.subtitle"
+        [price]="srv.price"
+        [description]="srv.description">
+      </app-trip-card>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-section">
+    <div class="footer-links">
+      <ion-button fill="clear" color="medium" routerLink="/about">About Us</ion-button>
+      <ion-button fill="clear" color="medium" routerLink="/contact">Contact</ion-button>
+    </div>
+    <p class="copyright">&copy; 2026 Shivamani Travels. All rights reserved.</p>
+  </div>
+
+  <!-- WhatsApp CTA FAB -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="openWhatsApp()">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

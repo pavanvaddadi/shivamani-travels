@@ -1,0 +1,90 @@
+.premium-card {
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--ion-color-step-50, #ffffff);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-image {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+ion-card-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--ion-color-dark);
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.price-tag {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ion-color-primary);
+}
+
+ion-card-subtitle {
+  color: var(--ion-color-medium);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot-separator {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.suitable-for {
+  color: var(--ion-color-medium-tint);
+}
+
+.car-description {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium-shade);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.features {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--ion-color-medium-shade);
+    
+    ion-icon {
+      color: var(--ion-color-primary);
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.book-btn {
+  margin-top: 10px;
+  font-weight: 600;
+  --box-shadow: 0 4px 10px rgba(var(--ion-color-primary-rgb), 0.3);
+}

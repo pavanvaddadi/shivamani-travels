@@ -1,0 +1,28 @@
+<ion-card class="premium-card">
+  <img [src]="image" (error)="image = 'assets/images/placeholder.jpg'" [alt]="name" class="card-image" loading="lazy"/>
+  <ion-card-header>
+    <ion-card-subtitle>
+      {{ type }}
+      <span *ngIf="suitableFor" class="dot-separator">•</span>
+      <span *ngIf="suitableFor" class="suitable-for">{{ suitableFor }}</span>
+    </ion-card-subtitle>
+    <div class="title-row">
+      <ion-card-title>{{ name }}</ion-card-title>
+      <span *ngIf="price" class="price-tag">{{ price }}</span>
+    </div>
+  </ion-card-header>
+  <ion-card-content class="card-content">
+    <p *ngIf="description" class="car-description">{{ description }}</p>
+    <div class="features">
+      <div class="feature">
+        <ion-icon name="people-outline"></ion-icon>
+        <span>{{ seats }} Seats</span>
+      </div>
+      <div class="feature">
+        <ion-icon name="snow-outline"></ion-icon>
+        <span>{{ hasAc ? 'AC' : 'Non-AC' }}</span>
+      </div>
+    </div>
+    <ion-button expand="block" shape="round" color="primary" class="book-btn" routerLink="/booking" [queryParams]="{ item: name }">Book Now</ion-button>
+  </ion-card-content>
+</ion-card>

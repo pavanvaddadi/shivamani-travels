@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "image": "assets/images/innova.jpg",
+    "title": "Premium Wedding SUV",
+    "subtitle": "Toyota Innova / Crysta",
+    "price": "From ₹3500/day",
+    "description": "Luxurious SUV decorated with premium fresh flowers and ribbons for the perfect bride & groom entry."
+  },
+  {
+    "id": 2,
+    "image": "assets/images/swift.jpg",
+    "title": "Elegant Bridal Sedan",
+    "subtitle": "Swift Dzire / Etios",
+    "price": "From ₹2500/day",
+    "description": "Beautifully decorated sedan car ideal for marriage functions and special occasions."
+  }
+]

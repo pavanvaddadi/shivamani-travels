@@ -1,0 +1,118 @@
+.premium-header {
+  --background: transparent;
+  
+  ion-toolbar {
+    --background: #ffffff;
+    --border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 4px 0;
+  }
+}
+
+/* Brand Logo */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.brand-icon {
+  font-size: 1.6rem;
+  color: var(--ion-color-primary);
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ion-color-dark);
+  letter-spacing: -0.5px;
+}
+
+.page-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ion-color-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Contact Buttons */
+.contact-buttons-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contact-action {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--ion-color-primary-tint);
+  color: var(--ion-color-primary-contrast);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+  
+  &:active {
+    transform: scale(0.95);
+  }
+
+  ion-icon {
+    font-size: 1.1rem;
+  }
+}
+
+.secondary-pill {
+  background: var(--ion-color-light);
+  color: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-primary-tint);
+}
+
+/* Responsive Rules */
+@media (max-width: 480px) {
+  /* On small mobile, hide the phone number text to save space */
+  .contact-number {
+    display: none;
+  }
+  
+  .contact-pill {
+    padding: 8px; /* Make it a circle on mobile */
+    border-radius: 50%;
+  }
+
+  /* Reduce logo size slightly */
+  .brand-icon { font-size: 1.4rem; }
+  .brand-name { font-size: 1rem; }
+}
+
+@media (min-width: 481px) {
+  /* Desktop/Tablet */
+  .brand-container {
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+  
+  .page-title {
+    margin-top: 0;
+    border-left: 2px solid var(--ion-color-light-shade);
+    padding-left: 12px;
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "image": "assets/images/airport.jpg",
+    "title": "Airport Pickup",
+    "subtitle": "Visakhapatnam Airport",
+    "price": "From ₹800",
+    "description": "Hassle-free pickup from Alluri Sitarama Raju International Airport to anywhere in Vizag."
+  },
+  {
+    "id": 2,
+    "image": "assets/images/airport.jpg",
+    "title": "Airport Drop",
+    "subtitle": "Visakhapatnam Airport",
+    "price": "From ₹800",
+    "description": "On-time drop to Alluri Sitarama Raju International Airport from your location in Vizag."
+  },
+  {
+    "id": 3,
+    "image": "assets/images/airport.jpg",
+    "title": "Airport Pickup & Drop",
+    "subtitle": "Round Trip Services",
+    "price": "From ₹1500",
+    "description": "Complete transportation solution for your arrival and departure."
+  },
+  {
+    "id": 4,
+    "image": "assets/images/srikakulam.jpg",
+    "title": "Rajahmundry Travel Package",
+    "subtitle": "Godavari & Heritage",
+    "price": "₹4500",
+    "description": "Explore the scenic beauty of Rajahmundry, Godavari river, and rich cultural heritage."
+  },
+  {
+    "id": 5,
+    "image": "assets/images/vizag.jpg",
+    "title": "Visakhapatnam City Tour",
+    "subtitle": "Full Day Sightseeing",
+    "price": "₹1500",
+    "description": "Explore the beautiful city of destiny covering RK Beach, Kailasagiri, Submarine Museum, and Rushikonda Beach."
+  },
+  {
+    "id": 6,
+    "image": "assets/images/araku.jpg",
+    "title": "Araku Valley Getaway",
+    "subtitle": "2 Days / 1 Night",
+    "price": "₹3500",
+    "description": "Experience the majestic hills of Araku Valley, Borra Caves, and the Coffee Museum in this relaxing weekend trip."
+  },
+  {
+    "id": 7,
+    "image": "assets/images/vizianagaram.jpg",
+    "title": "Vizianagaram Fort Tour",
+    "subtitle": "Royal Heritage",
+    "price": "₹1000",
+    "description": "Discover the royal history of Vizianagaram Fort and surrounding historical monuments."
+  },
+  {
+    "id": 8,
+    "image": "assets/images/srikakulam.jpg",
+    "title": "Srikakulam Heritage Tour",
+    "subtitle": "Temple & History",
+    "price": "₹1200",
+    "description": "Visit the historic Sun Temple at Arasavalli and Kurmanathaswamy Temple in Srikurmam."
+  }
+]

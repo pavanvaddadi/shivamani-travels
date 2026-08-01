@@ -1,0 +1,39 @@
+.search-card-container {
+  padding: 0 16px;
+  margin-top: -60px; /* Overlap with hero section */
+  position: relative;
+  z-index: 10;
+}
+
+.search-card {
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  background: var(--ion-color-step-50, #ffffff);
+}
+
+.search-fields {
+  background: var(--ion-color-step-100, #f8f9fa);
+  border-radius: 12px;
+  padding: 4px 0;
+  margin-bottom: 16px;
+}
+
+.input-item {
+  --background: transparent;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--ion-color-step-200, #e0e0e0);
+  margin: 0 16px;
+}
+
+.search-btn {
+  height: 48px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  --box-shadow: 0 6px 15px rgba(var(--ion-color-primary-rgb), 0.4);
+}

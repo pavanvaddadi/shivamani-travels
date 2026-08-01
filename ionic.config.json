@@ -1,0 +1,7 @@
+{
+  "name": "shivamani-travels",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
