@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { TripCardComponent } from '../../shared/components/trip-card/trip-card.component';
 import { CarCardComponent } from '../../shared/components/car-card/car-card.component';
 import { SearchCardComponent } from '../../shared/components/search-card/search-card.component';
@@ -23,7 +24,9 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.weddingServices$ = this.http.get<any[]>('assets/data/services.json');
+    this.weddingServices$ = this.http.get<any[]>('assets/data/services.json').pipe(
+      catchError(() => of([]))
+    );
   }
 
   popularDestinations = [

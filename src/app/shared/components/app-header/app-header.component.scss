@@ -1,17 +1,5 @@
 :host {
-  display: contents; /* Critical: makes Ionic see <ion-header> as a direct child of the page */
-}
-
-.premium-header {
-  --background: transparent;
-  
-  ion-toolbar {
-    --background: #ffffff;
-    --border-color: transparent;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    padding: 4px 0;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 4px); /* Android status bar */
-  }
+  display: block;
 }
 
 /* Brand Logo */

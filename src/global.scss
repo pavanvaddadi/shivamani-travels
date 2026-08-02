@@ -34,4 +34,13 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/* @import '@ionic/angular/css/palettes/dark.system.css'; */
+
+/* Global header toolbar styling */
+ion-header.ion-no-border ion-toolbar {
+  --background: #ffffff;
+  --border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 4px 0;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 4px);
+}

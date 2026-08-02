@@ -1,35 +1,33 @@
-<ion-header class="ion-no-border premium-header">
-  <ion-toolbar>
-    
-    <!-- Left: Back Button (if provided) -->
-    <ion-buttons slot="start" *ngIf="backHref">
-      <ion-back-button [defaultHref]="backHref" color="dark"></ion-back-button>
-    </ion-buttons>
+<!-- Only renders toolbar CONTENT — the <ion-header> and <ion-toolbar>
+     must be placed directly in each page template so that Ionic's native
+     layout engine can detect the header ↔ content sibling relationship. -->
 
-    <!-- Center: Brand Logo & Title -->
-    <div class="brand-container">
-      <div class="logo-wrapper" routerLink="/home">
-        <ion-icon name="car-sport" color="primary" class="brand-icon"></ion-icon>
-        <span class="brand-name">{{ brandName }}</span>
-      </div>
-      <div class="page-title" *ngIf="pageTitle">{{ pageTitle }}</div>
+<!-- Left: Back Button (if provided) -->
+<ion-buttons slot="start" *ngIf="backHref">
+  <ion-back-button [defaultHref]="backHref" color="dark"></ion-back-button>
+</ion-buttons>
+
+<!-- Center: Brand Logo & Title -->
+<div class="brand-container">
+  <div class="logo-wrapper" routerLink="/home">
+    <ion-icon name="car-sport" color="primary" class="brand-icon"></ion-icon>
+    <span class="brand-name">{{ brandName }}</span>
+  </div>
+  <div class="page-title" *ngIf="pageTitle">{{ pageTitle }}</div>
+</div>
+
+<!-- Right: Contact Numbers -->
+<ion-buttons slot="end" class="contact-buttons-container">
+  <a [href]="'tel:' + primaryContact" class="contact-action primary-action">
+    <div class="contact-pill">
+      <ion-icon name="call"></ion-icon>
+      <span class="contact-number">{{ primaryContact }}</span>
     </div>
-
-    <!-- Right: Contact Numbers -->
-    <ion-buttons slot="end" class="contact-buttons-container">
-      <a [href]="'tel:' + primaryContact" class="contact-action primary-action">
-        <div class="contact-pill">
-          <ion-icon name="call"></ion-icon>
-          <span class="contact-number">{{ primaryContact }}</span>
-        </div>
-      </a>
-      <a [href]="'tel:' + secondaryContact" class="contact-action secondary-action">
-        <div class="contact-pill secondary-pill">
-          <ion-icon name="call"></ion-icon>
-          <span class="contact-number">{{ secondaryContact }}</span>
-        </div>
-      </a>
-    </ion-buttons>
-    
-  </ion-toolbar>
-</ion-header>
+  </a>
+  <a [href]="'tel:' + secondaryContact" class="contact-action secondary-action">
+    <div class="contact-pill secondary-pill">
+      <ion-icon name="call"></ion-icon>
+      <span class="contact-number">{{ secondaryContact }}</span>
+    </div>
+  </a>
+</ion-buttons>

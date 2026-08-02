@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { CarCardComponent } from '../../shared/components/car-card/car-card.component';
 import { AppHeaderComponent } from '../../shared/components/app-header/app-header.component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 export interface Car {
   id: number;
@@ -31,6 +32,8 @@ export class CarsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.cars$ = this.http.get<Car[]>('assets/data/cars.json');
+    this.cars$ = this.http.get<Car[]>('assets/data/cars.json').pipe(
+      catchError(() => of([]))
+    );
   }
 }

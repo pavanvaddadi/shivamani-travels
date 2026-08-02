@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { TripCardComponent } from '../../shared/components/trip-card/trip-card.component';
 import { AppHeaderComponent } from '../../shared/components/app-header/app-header.component';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 export interface Trip {
   id: number;
@@ -28,6 +29,8 @@ export class TripsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.trips$ = this.http.get<Trip[]>('assets/data/packages.json');
+    this.trips$ = this.http.get<Trip[]>('assets/data/packages.json').pipe(
+      catchError(() => of([]))
+    );
   }
 }
