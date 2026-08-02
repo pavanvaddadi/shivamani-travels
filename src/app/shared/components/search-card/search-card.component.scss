@@ -1,8 +1,9 @@
 .search-card-container {
   padding: 0 16px;
-  margin-top: -60px; /* Overlap with hero section */
+  margin-top: -40px; /* Overlap with hero section (reduced for native) */
   position: relative;
   z-index: 10;
+  pointer-events: auto; /* Ensure taps reach inputs */
 }
 
 .search-card {
@@ -23,6 +24,7 @@
   --background: transparent;
   --padding-start: 16px;
   --inner-padding-end: 16px;
+  --min-height: 56px; /* Ensure inputs are easy to tap */
 }
 
 .divider {
@@ -32,8 +34,8 @@
 }
 
 .search-btn {
-  height: 48px;
-  font-weight: 600;
+  height: 52px; /* Bigger tap target */
+  font-weight: 700; /* Bolder text */
   letter-spacing: 0.5px;
   --box-shadow: 0 6px 15px rgba(var(--ion-color-primary-rgb), 0.4);
 }

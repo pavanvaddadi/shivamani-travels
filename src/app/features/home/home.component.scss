@@ -8,12 +8,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible; /* Allow search card to overlap */
+
+  @media (max-width: 480px) {
+    height: 280px;
+  }
 }
 
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -30,6 +36,10 @@
   font-weight: 800;
   margin-bottom: 10px;
   line-height: 1.2;
+  
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 }
 
 .highlight {
@@ -40,6 +50,10 @@
   font-size: 1.1rem;
   font-weight: 400;
   opacity: 0.9;
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 }
 
 .section-container {
@@ -67,28 +81,42 @@
 .horizontal-scroll {
   display: flex;
   overflow-x: auto;
-  padding: 10px 6px;
+  padding: 10px 16px; /* Increased side padding */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x; /* Crucial for mobile horizontal swipe inside ion-content */
+  gap: 12px; /* Added gap between items */
   
   &::-webkit-scrollbar {
     display: none;
   }
   
   > * {
-    flex: 0 0 85%;
+    flex: 0 0 80%; /* Show a bit of the next card */
     scroll-snap-align: center;
-    max-width: 320px;
+    max-width: 300px; /* Slightly smaller for mobile */
+    margin: 0; /* Let gap handle spacing */
+    
+    @media (min-width: 768px) {
+      flex: 0 0 40%;
+      max-width: 350px;
+    }
   }
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 0 6px;
+  padding: 0 16px;
+  gap: 16px;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  > * {
+    margin: 0; /* Remove default margin so gap handles spacing */
   }
 }
 

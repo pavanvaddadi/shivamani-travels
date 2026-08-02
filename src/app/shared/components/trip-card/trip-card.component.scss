@@ -1,7 +1,10 @@
 .premium-card {
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  margin: 10px;
+  margin: 0; /* Let grid/flex parent handle spacing */
+  height: 100%; /* Ensure uniform height in grids */
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: var(--ion-color-step-50, #ffffff);
@@ -10,6 +13,12 @@
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
+}
+
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-image {
@@ -46,6 +55,7 @@ ion-card-subtitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto; /* Push to bottom */
   }
 
   .price {
