@@ -1,24 +1,24 @@
 .hero-section {
-  height: 350px;
+  height: 360px;
   position: relative;
-  background-image: url('/assets/images/hero-bg.jpg'); /* Ensure this image exists or use a gradient fallback */
+  background-image: url('/assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  background-color: var(--ion-color-primary); /* Fallback */
+  background-color: #007c4b; /* Fallback */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Allow search card to overlap */
+  overflow: visible;
 
   @media (max-width: 480px) {
-    height: 280px;
+    height: 290px;
   }
 }
 
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.72) 100%);
   pointer-events: none;
 }
 
@@ -28,34 +28,39 @@
   text-align: center;
   color: white;
   padding: 0 20px;
-  margin-top: -30px; /* Offset for search card */
+  margin-top: -50px;
 }
 
 .hero-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  line-height: 1.2;
-  
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
   @media (max-width: 480px) {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
   }
 }
 
 .highlight {
-  color: var(--ion-color-warning); /* A nice yellow/gold color */
+  color: #ffc409;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 400;
-  opacity: 0.9;
-  
+  opacity: 0.92;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+
   @media (max-width: 480px) {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
 
+/* ───────────────────────────────────────────────
+   Sections
+   ─────────────────────────────────────────────── */
 .section-container {
   padding: 24px 0;
 }
@@ -72,59 +77,77 @@
 }
 
 .section-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--ion-color-dark);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
   margin: 0;
 }
 
+/* ───────────────────────────────────────────────
+   Horizontal scroll strip
+   ─────────────────────────────────────────────── */
 .horizontal-scroll {
   display: flex;
   overflow-x: auto;
-  padding: 10px 16px; /* Increased side padding */
+  padding: 8px 16px 12px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x; /* Crucial for mobile horizontal swipe inside ion-content */
-  gap: 12px; /* Added gap between items */
-  
+  touch-action: pan-x;
+  gap: 14px;
+
   &::-webkit-scrollbar {
     display: none;
   }
-  
+
   > * {
-    flex: 0 0 80%; /* Show a bit of the next card */
-    scroll-snap-align: center;
-    max-width: 300px; /* Slightly smaller for mobile */
-    margin: 0; /* Let gap handle spacing */
-    
-    @media (min-width: 768px) {
-      flex: 0 0 40%;
-      max-width: 350px;
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+    max-width: 300px;
+    margin: 0;
+
+    @media (min-width: 600px) {
+      flex: 0 0 42%;
+      max-width: 360px;
+    }
+
+    @media (min-width: 1024px) {
+      flex: 0 0 28%;
+      max-width: 380px;
     }
   }
 }
 
+/* ───────────────────────────────────────────────
+   Grid container
+   ─────────────────────────────────────────────── */
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 16px;
   gap: 16px;
-  
-  @media (min-width: 768px) {
+
+  @media (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
   }
 
-  > * {
-    margin: 0; /* Remove default margin so gap handles spacing */
-  }
+  > * { margin: 0; }
 }
 
+/* ───────────────────────────────────────────────
+   Footer
+   ─────────────────────────────────────────────── */
 .footer-section {
   text-align: center;
-  padding: 30px 16px 80px; /* Extra bottom padding for FAB */
-  background: var(--ion-color-step-50, #f8f9fa);
+  padding: 30px 16px 90px;
+  background: #f8f9fa;
   margin-top: 20px;
+  border-top: 1px solid #e4e6ea;
 }
 
 .footer-links {
@@ -132,16 +155,15 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 16px;
-  
+
   ion-button {
-    --color: var(--ion-color-medium-shade);
+    --color: #6b7280;
     font-weight: 600;
   }
 }
 
 .copyright {
-  color: var(--ion-color-medium);
-  font-size: 0.85rem;
+  color: #9ca3af;
+  font-size: 0.82rem;
   margin: 0;
 }
-

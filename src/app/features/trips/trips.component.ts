@@ -6,6 +6,7 @@ import { TripCardComponent } from '../../shared/components/trip-card/trip-card.c
 import { AppHeaderComponent } from '../../shared/components/app-header/app-header.component';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { APP_CONFIG } from '../../core/config/constants';
 
 export interface Trip {
   id: number;
@@ -32,5 +33,11 @@ export class TripsComponent implements OnInit {
     this.trips$ = this.http.get<Trip[]>('assets/data/packages.json').pipe(
       catchError(() => of([]))
     );
+  }
+
+  openWhatsApp() {
+    const phoneNumber = APP_CONFIG.whatsappNumber;
+    const message = 'Hello Shivamani Travels, I would like to book a trip.';
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   }
 }

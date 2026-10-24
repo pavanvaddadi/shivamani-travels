@@ -6,6 +6,7 @@ import { CarCardComponent } from '../../shared/components/car-card/car-card.comp
 import { AppHeaderComponent } from '../../shared/components/app-header/app-header.component';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { APP_CONFIG } from '../../core/config/constants';
 
 export interface Car {
   id: number;
@@ -35,5 +36,11 @@ export class CarsComponent implements OnInit {
     this.cars$ = this.http.get<Car[]>('assets/data/cars.json').pipe(
       catchError(() => of([]))
     );
+  }
+
+  openWhatsApp() {
+    const phoneNumber = APP_CONFIG.whatsappNumber;
+    const message = 'Hello Shivamani Travels, I would like to enquire about your fleet.';
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   }
 }

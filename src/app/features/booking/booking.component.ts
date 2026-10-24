@@ -76,4 +76,10 @@ export class BookingComponent implements OnInit {
       this.bookingForm.markAllAsTouched();
     }
   }
+
+  openWhatsApp() {
+    const phoneNumber = APP_CONFIG.whatsappNumber;
+    const message = 'Hello Shivamani Travels, I would like to enquire about a booking.';
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  }
 }

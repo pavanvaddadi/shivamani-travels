@@ -37,4 +37,10 @@ export class ContactComponent {
       this.contactForm.markAllAsTouched();
     }
   }
+
+  openWhatsApp() {
+    const phoneNumber = APP_CONFIG.whatsappNumber;
+    const message = 'Hello Shivamani Travels, I would like to get in touch.';
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  }
 }

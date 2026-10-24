@@ -1,41 +1,143 @@
 .search-card-container {
   padding: 0 16px;
-  margin-top: -40px; /* Overlap with hero section (reduced for native) */
+  margin-top: -48px;
   position: relative;
   z-index: 10;
-  pointer-events: auto; /* Ensure taps reach inputs */
+  pointer-events: auto;
 }
 
 .search-card {
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   margin: 0;
-  background: var(--ion-color-step-50, #ffffff);
+  background: #ffffff;
+
+  ion-card-content {
+    padding: 20px;
+  }
 }
 
-.search-fields {
-  background: var(--ion-color-step-100, #f8f9fa);
-  border-radius: 12px;
-  padding: 4px 0;
+/* Card title row */
+.search-card-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 16px;
 }
 
-.input-item {
+/* Input fields wrapper */
+.search-fields {
+  background: #f8f9fa;
+  border: 1.5px solid #e4e6ea;
+  border-radius: 14px;
+  padding: 4px 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+/* Individual field row */
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+
+  &:focus-within {
+    background: rgba(0, 124, 75, 0.04);
+  }
+}
+
+/* Icon circle */
+.field-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pickup-icon {
+  background: rgba(0, 124, 75, 0.10);
+}
+
+.dest-icon {
+  background: rgba(0, 124, 75, 0.10);
+}
+
+/* Label + input stacked */
+.field-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.field-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 2px;
+}
+
+.field-input {
   --background: transparent;
-  --padding-start: 16px;
-  --inner-padding-end: 16px;
-  --min-height: 56px; /* Ensure inputs are easy to tap */
+  --color: #111827;
+  --placeholder-color: #9ca3af;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-height: 28px;
+  color: #111827;
 }
 
-.divider {
+/* Divider between fields */
+.field-divider {
+  display: flex;
+  align-items: center;
+  padding: 0 14px 0 27px;
+  gap: 6px;
+}
+
+.divider-line {
+  flex: 1;
   height: 1px;
-  background: var(--ion-color-step-200, #e0e0e0);
-  margin: 0 16px;
+  background: #e4e6ea;
 }
 
+.divider-arrow {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* Search button */
 .search-btn {
-  height: 52px; /* Bigger tap target */
-  font-weight: 700; /* Bolder text */
-  letter-spacing: 0.5px;
-  --box-shadow: 0 6px 15px rgba(var(--ion-color-primary-rgb), 0.4);
+  height: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  --border-radius: 999px;
+  --box-shadow: 0 6px 18px rgba(0, 124, 75, 0.35);
+  margin: 0;
+}
+
+/* Mobile: reduce card overlap */
+@media (max-width: 480px) {
+  .search-card-container {
+    margin-top: -36px;
+    padding: 0 12px;
+  }
+
+  .search-card {
+    border-radius: 16px;
+  }
 }

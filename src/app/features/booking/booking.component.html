@@ -6,47 +6,114 @@
 
 <ion-content class="bg-light">
   <div class="booking-container">
-    <div class="header-text">
+    <div class="st-page-header">
       <h2>Plan Your Journey</h2>
       <p>Fill out the details and we'll confirm via WhatsApp</p>
     </div>
 
     <form [formGroup]="bookingForm" (ngSubmit)="onBookNow()">
-      <div class="form-card">
-        <!-- Personal Details -->
-        <h3 class="section-heading">Personal Details</h3>
-        
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="person-outline" slot="start" color="medium"></ion-icon>
-          <ion-input formControlName="name" label="Full Name" labelPlacement="floating" placeholder="Enter your name"></ion-input>
+      <!-- ── Personal Details ── -->
+      <div class="st-form-card">
+        <h3 class="st-section-heading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Personal Details
+        </h3>
+
+        <!-- Full Name -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <ion-input
+            formControlName="name"
+            label="Full Name"
+            labelPlacement="floating"
+            placeholder="Enter your name">
+          </ion-input>
         </ion-item>
-        <div class="error-msg" *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.invalid">Name is required</div>
+        <div class="st-error" *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.invalid">
+          Name is required
+        </div>
 
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="call-outline" slot="start" color="medium"></ion-icon>
-          <ion-input formControlName="mobile" type="tel" label="Mobile Number" labelPlacement="floating" placeholder="10-digit mobile number"></ion-input>
+        <!-- Mobile -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8a14.4 14.4 0 006.6 6.6l2.2-2.2a1 1 0 011.02-.24 11.4 11.4 0 003.58.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.58 1 1 0 01-.25 1.02L6.6 10.8z"
+                  stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <ion-input
+            formControlName="mobile"
+            type="tel"
+            label="Mobile Number"
+            labelPlacement="floating"
+            placeholder="10-digit mobile number">
+          </ion-input>
         </ion-item>
-        <div class="error-msg" *ngIf="bookingForm.get('mobile')?.touched && bookingForm.get('mobile')?.invalid">Valid 10-digit mobile number is required</div>
+        <div class="st-error" *ngIf="bookingForm.get('mobile')?.touched && bookingForm.get('mobile')?.invalid">
+          Valid 10-digit mobile number is required
+        </div>
+      </div>
 
-        <!-- Trip Details -->
-        <h3 class="section-heading mt-4">Trip Details</h3>
+      <!-- ── Trip Details ── -->
+      <div class="st-form-card">
+        <h3 class="st-section-heading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                  stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" stroke="#007c4b" stroke-width="2"/>
+          </svg>
+          Trip Details
+        </h3>
 
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="location-outline" slot="start" color="medium"></ion-icon>
-          <ion-input formControlName="pickup" label="Pickup Location" labelPlacement="floating" placeholder="Where from?"></ion-input>
+        <!-- Pickup Location -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" stroke="#007c4b" stroke-width="2"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#007c4b" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <ion-input
+            formControlName="pickup"
+            label="Pickup Location"
+            labelPlacement="floating"
+            placeholder="Where from?">
+          </ion-input>
         </ion-item>
-        <div class="error-msg" *ngIf="bookingForm.get('pickup')?.touched && bookingForm.get('pickup')?.invalid">Pickup location is required</div>
+        <div class="st-error" *ngIf="bookingForm.get('pickup')?.touched && bookingForm.get('pickup')?.invalid">
+          Pickup location is required
+        </div>
 
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="map-outline" slot="start" color="medium"></ion-icon>
-          <ion-input formControlName="destination" label="Destination" labelPlacement="floating" placeholder="Where to?"></ion-input>
+        <!-- Destination -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                  stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" fill="#007c4b"/>
+          </svg>
+          <ion-input
+            formControlName="destination"
+            label="Destination"
+            labelPlacement="floating"
+            placeholder="Where to?">
+          </ion-input>
         </ion-item>
-        <div class="error-msg" *ngIf="bookingForm.get('destination')?.touched && bookingForm.get('destination')?.invalid">Destination is required</div>
+        <div class="st-error" *ngIf="bookingForm.get('destination')?.touched && bookingForm.get('destination')?.invalid">
+          Destination is required
+        </div>
 
-        <div class="datetime-container">
-          <ion-item lines="none" class="datetime-item">
-            <ion-icon name="calendar-outline" slot="start" color="medium"></ion-icon>
-            <ion-label position="stacked">Pickup Date</ion-label>
+        <!-- Date picker -->
+        <div class="dt-wrapper">
+          <div class="dt-label-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="3" stroke="#007c4b" stroke-width="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18" stroke="#007c4b" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="dt-label">Pickup Date</span>
+          </div>
+          <ion-item lines="none" class="dt-item">
             <ion-datetime-button datetime="datePicker"></ion-datetime-button>
           </ion-item>
           <ion-modal [keepContentsMounted]="true">
@@ -56,10 +123,16 @@
           </ion-modal>
         </div>
 
-        <div class="datetime-container">
-          <ion-item lines="none" class="datetime-item">
-            <ion-icon name="time-outline" slot="start" color="medium"></ion-icon>
-            <ion-label position="stacked">Pickup Time</ion-label>
+        <!-- Time picker -->
+        <div class="dt-wrapper">
+          <div class="dt-label-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="#007c4b" stroke-width="2"/>
+              <path d="M12 7v5l3 3" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="dt-label">Pickup Time</span>
+          </div>
+          <ion-item lines="none" class="dt-item">
             <ion-datetime-button datetime="timePicker"></ion-datetime-button>
           </ion-item>
           <ion-modal [keepContentsMounted]="true">
@@ -69,33 +142,78 @@
           </ion-modal>
         </div>
 
-        <ion-item lines="full" class="premium-input select-input" *ngIf="!selectedItem">
-          <ion-icon name="car-outline" slot="start" color="medium"></ion-icon>
+        <!-- Car Type -->
+        <ion-item lines="none" class="st-input-item select-item" *ngIf="!selectedItem">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 17H3a1 1 0 01-1-1v-5l2-6h16l2 6v5a1 1 0 01-1 1h-2"
+                  stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="7.5" cy="17.5" r="2.5" stroke="#007c4b" stroke-width="2"/>
+            <circle cx="16.5" cy="17.5" r="2.5" stroke="#007c4b" stroke-width="2"/>
+            <path d="M5 11h14" stroke="#007c4b" stroke-width="2" stroke-linecap="round"/>
+          </svg>
           <ion-select formControlName="carType" label="Car Type" labelPlacement="floating">
             <ion-select-option value="Sedan">Sedan (4 Seats)</ion-select-option>
             <ion-select-option value="SUV">SUV (7 Seats)</ion-select-option>
             <ion-select-option value="Tempo">Tempo Traveller (12+ Seats)</ion-select-option>
           </ion-select>
         </ion-item>
-        
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="people-outline" slot="start" color="medium"></ion-icon>
-          <ion-input type="number" formControlName="passengers" label="Passengers" labelPlacement="floating"></ion-input>
-        </ion-item>
-        <div class="error-msg" *ngIf="bookingForm.get('passengers')?.touched && bookingForm.get('passengers')?.invalid">Passengers count is required</div>
 
-        <ion-item lines="full" class="premium-input">
-          <ion-icon name="document-text-outline" slot="start" color="medium"></ion-icon>
-          <ion-textarea formControlName="notes" label="Additional Notes" labelPlacement="floating" [autoGrow]="true" rows="2"></ion-textarea>
+        <!-- Passengers -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <ion-input
+            type="number"
+            formControlName="passengers"
+            label="Passengers"
+            labelPlacement="floating">
+          </ion-input>
+        </ion-item>
+        <div class="st-error" *ngIf="bookingForm.get('passengers')?.touched && bookingForm.get('passengers')?.invalid">
+          Passengers count is required
+        </div>
+
+        <!-- Notes -->
+        <ion-item lines="none" class="st-input-item">
+          <svg slot="start" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"
+                  stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#007c4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <ion-textarea
+            formControlName="notes"
+            label="Additional Notes"
+            labelPlacement="floating"
+            [autoGrow]="true"
+            rows="2">
+          </ion-textarea>
         </ion-item>
       </div>
 
+      <!-- Submit -->
       <div class="submit-btn-container">
-        <ion-button type="submit" expand="block" shape="round" color="primary" class="book-btn">
-          <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+        <ion-button type="submit" expand="block" class="book-btn wa-btn" aria-label="Book via WhatsApp">
+          <!-- Official WhatsApp SVG inline — always visible -->
+          <svg slot="start" class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="16" cy="16" r="16" fill="rgba(255,255,255,0.25)"/>
+            <path fill="#ffffff" d="M23.5 8.5A10.9 10.9 0 0016 6C10.48 6 6 10.48 6 16a9.94 9.94 0 001.36 5.09L6 26l5.09-1.34A10 10 0 0016 26c5.52 0 10-4.48 10-10a9.93 9.93 0 00-2.5-7.5zm-7.5 15.3a8.28 8.28 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.32A8.27 8.27 0 017.7 16a8.3 8.3 0 018.3-8.3 8.3 8.3 0 010 16.6zm4.56-6.2c-.25-.12-1.47-.72-1.7-.81-.22-.08-.39-.12-.55.12s-.63.81-.77.97-.28.19-.52.06a6.55 6.55 0 01-1.93-1.19 7.23 7.23 0 01-1.34-1.66c-.14-.25-.01-.38.1-.5.11-.11.25-.28.37-.42.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 00-.65.31 2.76 2.76 0 00-.86 2.05 4.8 4.8 0 001 2.55 11 11 0 004.2 3.72c.59.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/>
+          </svg>
           Book via WhatsApp
         </ion-button>
       </div>
     </form>
   </div>
+
+  <!-- WhatsApp Quick Contact FAB -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="whatsapp-fab" (click)="openWhatsApp()" aria-label="Chat on WhatsApp">
+      <svg class="wa-fab-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+        <path fill="#ffffff" d="M23.5 8.5A10.9 10.9 0 0016 6C10.48 6 6 10.48 6 16a9.94 9.94 0 001.36 5.09L6 26l5.09-1.34A10 10 0 0016 26c5.52 0 10-4.48 10-10a9.93 9.93 0 00-2.5-7.5zm-7.5 15.3a8.28 8.28 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.32A8.27 8.27 0 017.7 16a8.3 8.3 0 018.3-8.3 8.3 8.3 0 010 16.6zm4.56-6.2c-.25-.12-1.47-.72-1.7-.81-.22-.08-.39-.12-.55.12s-.63.81-.77.97-.28.19-.52.06a6.55 6.55 0 01-1.93-1.19 7.23 7.23 0 01-1.34-1.66c-.14-.25-.01-.38.1-.5.11-.11.25-.28.37-.42.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 00-.65.31 2.76 2.76 0 00-.86 2.05 4.8 4.8 0 001 2.55 11 11 0 004.2 3.72c.59.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/>
+      </svg>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

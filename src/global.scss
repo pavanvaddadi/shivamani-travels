@@ -25,22 +25,330 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+/* Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 /**
- * Ionic Dark Mode
+ * Design System Tokens
  * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
  */
+:root {
+  /* Brand greens */
+  --st-green-50:  #f0faf5;
+  --st-green-100: #d5f0e3;
+  --st-green-500: #007c4b;
+  --st-green-600: #006d42;
+  --st-green-700: #024b30;
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-/* @import '@ionic/angular/css/palettes/dark.system.css'; */
+  /* Neutrals */
+  --st-gray-50:  #f8f9fa;
+  --st-gray-100: #f0f2f5;
+  --st-gray-200: #e4e6ea;
+  --st-gray-400: #9ca3af;
+  --st-gray-600: #4b5563;
+  --st-gray-900: #111827;
 
-/* Global header toolbar styling */
+  /* Semantic */
+  --st-text-primary:   var(--st-gray-900);
+  --st-text-secondary: var(--st-gray-600);
+  --st-text-placeholder: var(--st-gray-400);
+  --st-border:         var(--st-gray-200);
+  --st-surface:        #ffffff;
+  --st-bg:             var(--st-gray-50);
+
+  /* Spacing */
+  --st-radius-sm:  8px;
+  --st-radius-md:  12px;
+  --st-radius-lg:  16px;
+  --st-radius-xl:  24px;
+  --st-radius-pill: 999px;
+
+  /* Shadows */
+  --st-shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+  --st-shadow-md:  0 8px 24px rgba(0,0,0,0.08);
+  --st-shadow-lg:  0 16px 40px rgba(0,0,0,0.10);
+}
+
+/* Base font */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/**
+ * Global header toolbar styling
+ * -----------------------------------------------------
+ */
 ion-header.ion-no-border ion-toolbar {
   --background: #ffffff;
   --border-color: transparent;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 4px 0;
   padding-top: calc(env(safe-area-inset-top, 0px) + 4px);
 }
+
+/**
+ * Global form input text color fix
+ * Prevents white-on-white text in ion-input / ion-textarea / ion-select
+ * -----------------------------------------------------
+ */
+ion-input,
+ion-textarea,
+ion-select {
+  --color: var(--st-text-primary) !important;
+  --placeholder-color: var(--st-text-placeholder) !important;
+  color: var(--st-text-primary) !important;
+}
+
+ion-input input,
+ion-textarea textarea {
+  color: var(--st-text-primary) !important;
+}
+
+ion-label {
+  color: var(--st-text-secondary) !important;
+}
+
+/* ion-item base reset for form items */
+ion-item {
+  --color: var(--st-text-primary);
+}
+
+/**
+ * Consistent ion-button shape and weight
+ * -----------------------------------------------------
+ */
+ion-button {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/**
+ * Consistent card background (light mode)
+ * -----------------------------------------------------
+ */
+ion-card {
+  --background: var(--st-surface);
+}
+
+/**
+ * Shared page-level utility classes
+ * (used across all feature components)
+ * -----------------------------------------------------
+ */
+.bg-light {
+  --background: var(--st-bg);
+}
+
+/* Shared page header text block */
+.st-page-header {
+  padding: 20px 20px 16px;
+  text-align: center;
+
+  h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: var(--st-text-primary);
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--st-text-secondary);
+    margin: 0;
+  }
+}
+
+/* Shared grid container */
+.st-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0 16px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
+  > * { margin: 0; }
+}
+
+/* Shared loading spinner */
+.st-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  ion-spinner {
+    transform: scale(1.5);
+    --color: var(--ion-color-primary);
+  }
+}
+
+/* Shared form card */
+.st-form-card {
+  background: var(--st-surface);
+  border-radius: var(--st-radius-lg);
+  padding: 24px 20px;
+  box-shadow: var(--st-shadow-md);
+  margin-bottom: 24px;
+}
+
+/* Shared section heading inside form cards */
+.st-section-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--st-green-500);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--st-green-50);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+/* Shared premium input styling */
+.st-input-item {
+  --background: var(--st-gray-50);
+  --border-radius: var(--st-radius-sm);
+  --padding-start: 14px;
+  --inner-padding-end: 14px;
+  --min-height: 58px;
+  --color: var(--st-text-primary);
+  border: 1.5px solid var(--st-border);
+  border-radius: var(--st-radius-sm);
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+
+  &.item-has-focus {
+    border-color: var(--st-green-500);
+    --background: #fff;
+  }
+
+  ion-icon[slot="start"] {
+    color: var(--st-green-500);
+    font-size: 1.15rem;
+    margin-right: 10px;
+  }
+
+  ion-input,
+  ion-textarea,
+  ion-select {
+    --color: var(--st-text-primary) !important;
+    --placeholder-color: var(--st-text-placeholder) !important;
+    font-size: 0.95rem;
+  }
+}
+
+/* Error message */
+.st-error {
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  padding-left: 14px;
+  margin: -8px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Primary CTA button */
+.st-btn-primary {
+  height: 52px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  --box-shadow: 0 6px 20px rgba(0, 124, 75, 0.35);
+  --border-radius: var(--st-radius-pill);
+}
+
+/* Utility margins */
+.mt-2 { margin-top: 12px; }
+.mt-4 { margin-top: 24px; }
+.mb-4 { margin-bottom: 24px; }
+
+/**
+ * ── WhatsApp FAB (global) ────────────────────────────────────────────
+ * The ion-fab-button normally forces its own background colour.
+ * We override it so our inline SVG (which carries its own #25D366 circle)
+ * becomes the only visible element — no colour clash, no missing icon.
+ * ─────────────────────────────────────────────────────────────────────
+ */
+ion-fab-button.whatsapp-fab {
+  /* Remove Ionic's default coloured background */
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --box-shadow: 0 6px 20px rgba(37, 211, 102, 0.50);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  width: 56px;
+  height: 56px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ion-fab-button.whatsapp-fab:hover {
+  --box-shadow: 0 8px 28px rgba(37, 211, 102, 0.65);
+  transform: scale(1.08);
+}
+
+ion-fab-button.whatsapp-fab:active {
+  transform: scale(0.94);
+}
+
+/* The SVG fills the button face */
+.wa-fab-icon {
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 50%;
+  /* Bring a subtle drop-shadow so it floats above page content */
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.22));
+}
+
+/**
+ * ── WhatsApp inline button (forms / cards) ──────────────────────────
+ * Used inside ion-button[class~="wa-btn"] for form submit buttons
+ * that open WhatsApp.
+ * ─────────────────────────────────────────────────────────────────────
+ */
+.wa-btn {
+  --background: #25D366;
+  --background-activated: #1eb85a;
+  --background-hover: #20c05e;
+  --color: #ffffff;
+  --box-shadow: 0 6px 18px rgba(37, 211, 102, 0.40);
+  --border-radius: 999px;
+  font-weight: 700;
+  height: 52px;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  transition: box-shadow 0.2s;
+}
+
+.wa-btn:hover {
+  --box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
+}
+
+/* The inline WhatsApp logo SVG used inside buttons */
+.wa-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+

@@ -10,7 +10,15 @@
 <!-- Center: Brand Logo & Title -->
 <div class="brand-container">
   <div class="logo-wrapper" routerLink="/home">
-    <ion-icon name="car-sport" color="primary" class="brand-icon"></ion-icon>
+    <!-- Car SVG icon (inline, always visible) -->
+    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true" focusable="false">
+      <path d="M5 17H3a1 1 0 01-1-1v-5l2-6h16l2 6v5a1 1 0 01-1 1h-2"
+            stroke="var(--ion-color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="7.5" cy="17.5" r="2.5" stroke="var(--ion-color-primary)" stroke-width="1.8"/>
+      <circle cx="16.5" cy="17.5" r="2.5" stroke="var(--ion-color-primary)" stroke-width="1.8"/>
+      <path d="M5 11h14" stroke="var(--ion-color-primary)" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
     <span class="brand-name">{{ brandName }}</span>
   </div>
   <div class="page-title" *ngIf="pageTitle">{{ pageTitle }}</div>
@@ -18,15 +26,24 @@
 
 <!-- Right: Contact Numbers -->
 <ion-buttons slot="end" class="contact-buttons-container">
-  <a [href]="'tel:' + primaryContact" class="contact-action primary-action">
-    <div class="contact-pill">
-      <ion-icon name="call"></ion-icon>
+  <a [href]="'tel:' + primaryContact" class="contact-action" aria-label="Call primary number">
+    <div class="contact-pill primary-pill">
+      <!-- Inline phone SVG -->
+      <svg class="phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true" focusable="false">
+        <path d="M6.6 10.8a14.4 14.4 0 006.6 6.6l2.2-2.2a1 1 0 011.02-.24 11.4 11.4 0 003.58.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.58 1 1 0 01-.25 1.02L6.6 10.8z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <span class="contact-number">{{ primaryContact }}</span>
     </div>
   </a>
-  <a [href]="'tel:' + secondaryContact" class="contact-action secondary-action">
+  <a [href]="'tel:' + secondaryContact" class="contact-action" aria-label="Call secondary number">
     <div class="contact-pill secondary-pill">
-      <ion-icon name="call"></ion-icon>
+      <svg class="phone-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true" focusable="false">
+        <path d="M6.6 10.8a14.4 14.4 0 006.6 6.6l2.2-2.2a1 1 0 011.02-.24 11.4 11.4 0 003.58.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.58 1 1 0 01-.25 1.02L6.6 10.8z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <span class="contact-number">{{ secondaryContact }}</span>
     </div>
   </a>
